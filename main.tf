@@ -14,7 +14,7 @@ resource "random_pet" "pet" {
 resource "aws_s3_bucket" "S3_bucket_EMR" {
   bucket = "emr-athena-bucket-akash-${random_pet.pet.id}"
 
-
+  force_destroy = true
   tags = {
     Name        = "EMR-Athena-bucket-akashp"
   }
