@@ -1,7 +1,7 @@
 from pyspark.sql import SparkSession
 
-S3_DATA_INPUT_PATH="s3://s3-projectpro-emr-athena-sripad/source-folder/wikiticker-2015-09-12-sampled.json"
-S3_DATA_OUTPUT_PATH_FILTERED="s3://s3-projectpro-emr-athena-sripad/data-output/filtered"
+S3_DATA_INPUT_PATH="s3://emr-athena-bucket-akashp7/input_data/wikiticker-2015-09-12-sampled.json"
+S3_DATA_OUTPUT_PATH_FILTERED="s3://emr-athena-bucket-akashp7/data-output/filtered"
 
 def main():
     spark = SparkSession.builder.appName('projectProDemo').getOrCreate()
