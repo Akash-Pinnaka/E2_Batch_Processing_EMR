@@ -12,7 +12,7 @@ resource "aws_emr_cluster" "cluster" {
     emr_managed_master_security_group = aws_security_group.allow_access.id
     emr_managed_slave_security_group  = aws_security_group.allow_access.id
     # instance_profile                  = aws_iam_instance_profile.ec2-instance-profile.arn
-    instance_profile = "arn:aws:iam::171611345452:instance-profile/EMR_EC2_DefaultRole"
+    instance_profile = "arn:aws:iam::992382386350:instance-profile/EMR_EC2_DefaultRole"
   }
   master_instance_group {
     instance_type = "m4.xlarge"
@@ -67,6 +67,6 @@ resource "aws_emr_cluster" "cluster" {
 
   # service_role = aws_iam_role.emr-service-role.arn
 
-  service_role = "arn:aws:iam::171611345452:role/EMR_DefaultRole"
+  service_role = "arn:aws:iam::992382386350:role/EMR_DefaultRole"
 }
 
