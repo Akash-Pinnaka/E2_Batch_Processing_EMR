@@ -131,6 +131,45 @@ resource "aws_glue_catalog_table" "catalog_table" {
   }
 }
 
+
+# resource "aws_glue_catalog_table" "catalog_aggr_table" {
+#   name          = "aggrtable"
+#   database_name = aws_glue_catalog_database.random.name
+
+#   table_type = "EXTERNAL_TABLE"
+
+#   parameters = {
+#     EXTERNAL              = "TRUE"
+#     "parquet.compression" = "SNAPPY"
+#   }
+
+#   storage_descriptor {
+#     location      = "s3://emr-athena-bucket-akashp7/data-output/aggregated"
+#     input_format  = "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat"
+#     output_format = "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat"
+
+#     ser_de_info {
+#       name                  = "my-stream"
+#       serialization_library = "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe"
+
+#       parameters = {
+#         "serialization.format" = 1
+#       }
+#     }
+
+#     columns {
+#       name    = "channel"
+#       type    = "string"
+#       comment = ""
+#     }
+#     columns {
+#       name    = "count"
+#       type    = "bigint"
+#       comment = ""
+#     }
+    
+#   }
+# }
 # resource "aws_athena_named_query" "example_query" {
 #   database = "your_database"
 #   query    = "SELECT * FROM MyCatalogDatabase.MyCatalogTable LIMIT 10"  # Example query
